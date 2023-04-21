@@ -1,0 +1,109 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Sign Up</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['ClientName'].dirty && signUpForm.hasError('required','ClientName')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="ClientName" type="text" class="text" placeholder="Client Name">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['ClientName'].dirty && signUpForm.hasError('required','ClientName')"
+                                class="text-danger">
+                                *ClientName is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['ClientOrganisationName'].dirty && signUpForm.hasError('required','ClientOrganisationName')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="ClientOrganisationName" type="text" class="text" placeholder="Client Organisation Name">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['ClientOrganisationName'].dirty && signUpForm.hasError('required','ClientOrganisationName')"
+                                class="text-danger">
+                                *ClientOrganisationName is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['OrganisationEmailId'].dirty && signUpForm.hasError('required','OrganisationEmailId')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="OrganisationEmailId" type="text" class="text" placeholder="Organisation EmailId">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['OrganisationEmailId'].dirty && signUpForm.hasError('required','OrganisationEmailId')"
+                                class="text-danger">
+                                *OrganisationEmailId is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['ClientMobileNumber'].dirty && signUpForm.hasError('required','ClientMobileNumber')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="ClientMobileNumber" type="text" class="text" placeholder="Client Mobile Number">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['ClientMobileNumber'].dirty && signUpForm.hasError('required','ClientMobileNumber')"
+                                class="text-danger">
+                                *ClientMobileNumber is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input formControlName="Password" [type]="type1" class="text" placeholder="Enter Password">
+                                    <span (click)="hideshowpass()" class="fa {{eyeIcon1}}"></span>
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')"
+                                class="text-danger">
+                                *Password is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['ReEnterPassword'].dirty && signUpForm.hasError('required','ReEnterPassword')">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input formControlName="ReEnterPassword" [type]="type2 " class="text" placeholder="ReEnter Password">
+                                    <span (click)="hideshowrepass()" class="fa {{eyeIcon2}}"></span>
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['ReEnterPassword'].dirty && signUpForm.hasError('required','ReEnterPassword')"
+                                class="text-danger">
+                                *ReEnterPassword is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['OrganisationAddress1'].dirty && signUpForm.hasError('required','OrganisationAddress1')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="OrganisationAddress1" type="text" class="text" placeholder="Organisation Address1">
+                                </div>
+                            </div>
+                            <small
+                                *ngIf="signUpForm.controls['OrganisationAddress1'].dirty && signUpForm.hasError('required','OrganisationAddress1')"
+                                class="text-danger">
+                                *OrganisationAddress1 is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="OrganisationAddress2" type="text" class="text" placeholder="Organisation Address2">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="select">
+                                    <span class="fa fa-select p-2">OrganisationStatus</span>
+                                    <select formControlName="OrganisationStatus" id="select">
+                                        <option>Select</option>
+                                        <option>Active</option>
+                                        <option>InActive</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <button (click)="saveUpdateOrganisation()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Sign Up</button>
+                            <div class="text-center pt-4 text-muted">Already Have Account? <a href="forget" class="forget" routerLink="/login">Login</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
